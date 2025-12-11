@@ -33,10 +33,7 @@ create TABLE IF NOT EXISTS payments(
 CREATE INDEX IF NOT EXISTS idx_payments_customer_id ON payments(customer_id); --usados para melhorar a consulta, ja que estou usando foreign key
 
 
--- inserção de dados para testes iniciais
-INSERT INTO customers (name,cnpj,pix_key,pix_type) VALUES
-('IENOTECH','12345678910123','12345678909','CNPJ'),
-('TECHMODEL','43210987654321','vini3007@gmail.com','EMAIL');
+
 
 
 
