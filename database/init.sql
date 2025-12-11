@@ -21,10 +21,26 @@ create TABLE IF NOT EXISTS customers(
 
 create TABLE IF NOT EXISTS payments(
     txid VARCHAR(35) PRIMARY KEY,
-    customer_id UUID NOT NULL REFERENCES customers(id) ON DELETE CASCADE --se o id da tabela customers for apagado, todos os pagamentos relacionados a esse cliente tb serao
+    customer_id UUID NOT NULL REFERENCES customers(id) ON DELETE CASCADE ,--se o id da tabela customers for apagado, todos os pagamentos relacionados a esse cliente tb serao
     status VARCHAR(20) NOT NULL DEFAULT 'pending',
     total_value NUMERIC(15,2) NOT NULL,
     creat_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 
 );
+
+-- índices
+CREATE INDEX IF NOT EXISTS idx_payments_customer_id ON payments(customer_id); --usados para melhorar a consulta, ja que estou usando foreign key
+
+
+-- inserção de dados para testes iniciais
+INSERT INTO customers (name,cnpj,pix_key,pix_type) VALUES
+('IENOTECH','12345678910123','12345678909','CNPJ'),
+('TECHMODEL','43210987654321','vini3007@gmail.com','EMAIL');
+
+
+
+
+
+
+
