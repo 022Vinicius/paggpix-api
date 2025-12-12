@@ -30,7 +30,7 @@ Para executar a API, você precisa ter instalado:
 * **Docker e Docker Compose**
 * **Git**
 
-### 3. ⚙️ Como Executar
+### 3.  Como Executar
 
 #### 3.1. Clone o Repositório:
 
@@ -129,8 +129,46 @@ docker compose down -v
 docker compose up -d --build
 ```
 
+### 5.  Testando a API com Postman
+
+Para facilitar os testes da Paggpix Payments API, você pode usar o **Postman**
+
+
+#### 5.1. Importando a Coleção
+
+1. Abra o Postman.
+2. Clique em **Import** → **Upload Files**.
+3. Selecione o arquivo `paggpix_desafio.postman_collection.json` fornecido(se enocontra no github).
+4. A coleção será adicionada à sua barra lateral no Postman.
+
 ---
 
-### 🟢 Status do Projeto
+#### 5.2. Configurando o Token de Autenticação
 
-Projeto **Concluído** ✅
+Todos os endpoints da API exigem o header `client_id_token`. Para configurar:
+
+    1. Na coleção importada, clique com o botão direito → **Edit** → **Authorization**.
+    2. Selecione **Type: API Key** ou **Header**.
+    3. Configure:
+    - **Key:** `client_id_token`
+    - **Value:** `vinicius123`
+    - **Add to:** `Header`
+    4. Salve a configuração.  
+>
+
+---
+
+#### 5.3. Testando Endpoints
+
+Exemplos de endpoints e como testá-los no Postman:
+
+| Método | Endpoint                 | Exemplo de Body (JSON)                  |
+|--------|-------------------------|----------------------------------------|
+| POST   | /payments               | `{"cnpj":"12345678000199","value":150}` |
+| GET    | /payments               | —                                      |
+| GET    | /payments/:txid         | —                                      |
+| PATCH  | /payments/:txid/status  | `{"status":"DONE"}`                     |
+
+
+
+ Seguindo esses passos, qualquer pessoa pode testar a api
