@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "e7cf93fc-700e-4fc5-be9a-f3f21cb4a36d",
+		"name": "Paggpix desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50759995",
+		"_collection_link": "https://warped-station-6618132.postman.co/workspace/paggpix-api~29d42265-3b88-42bf-9894-08dda0fa3500/collection/50759995-e7cf93fc-700e-4fc5-be9a-f3f21cb4a36d?action=share&source=collection_link&creator=50759995"
+	},
+	"item": [
+		{
+			"name": "Criar um novo pagamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "client_id_token",
+						"value": "vinicius123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n\r\n{ \"cnpj\": \"12345678910123\", \"value\": 50 }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/payments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"payments"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar ultimo pagamento",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id_token",
+						"value": "vinicius123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/payments/d50b9883-d9d7-418b-bcda-c5f451e702c",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"payments",
+						"d50b9883-d9d7-418b-bcda-c5f451e702c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mudar status de pagamento",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "client_id_token",
+						"value": "vinicius123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"status\": \"DONE\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/payments/d50b9883-d9d7-418b-bcda-c5f451e702c/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"payments",
+						"d50b9883-d9d7-418b-bcda-c5f451e702c",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste de Falha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "client_id_token",
+						"value": "vinicius123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cnpj\": \"11111111111111\", \"value\": 100} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/payments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teste status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "client_id_token",
+						"value": "vinicius123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"status\": \"CANCELED\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/payments/a7909e27-b5c3-4f9f-85e3-ab10830fe90/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"payments",
+						"a7909e27-b5c3-4f9f-85e3-ab10830fe90",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "http://localhost:3000",
+			"value": ""
+		},
+		{
+			"key": "txid",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
