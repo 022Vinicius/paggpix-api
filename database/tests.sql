@@ -2,10 +2,10 @@
 
 
 
--- inserção de dados para testes iniciais
---INSERT INTO customers (name,cnpj,pix_key,pix_type) VALUES
---('IENOTECH','12345678910123','12345678909','CNPJ'),
---('TECHMODEL','43210987654321','vini3007@gmail.com','EMAIL');
+--inserção de dados para testes iniciais
+INSERT INTO customers (name,cnpj,pix_key,pix_type) VALUES
+('IENOTECH','12345678910123','12345678909','CNPJ'),
+('TECHMODEL','43210987654321','vini3007@gmail.com','EMAIL');
 
 
 -- Depois de ter visto os UUIDs geraados e que estão no pgadmin, posso fazer a inserção dos pagamentos relacionados:

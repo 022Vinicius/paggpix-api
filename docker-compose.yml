@@ -1,0 +1,34 @@
+version: '29.1.2'
+
+services:
+  api:
+    build: .
+    container_name: paggpix-api
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: paggpix
+      DB_PASS: paggpix123
+      DB_NAME: paggpix_payments
+      CLIENT_TOKEN: vinicius123
+      PORT: 3000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: paggpix-db
+    environment:
+      POSTGRES_USER: paggpix
+      POSTGRES_PASSWORD: paggpix123
+      POSTGRES_DB: paggpix_payments
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  pgdata:

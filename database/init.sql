@@ -14,7 +14,7 @@ create TABLE IF NOT EXISTS customers(
     cnpj VARCHAR(14) NOT NULL UNIQUE,
     pix_key VARCHAR(255) NOT NULL,
     pix_type VARCHAR(20) NOT NULL,
-    creat_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
@@ -24,7 +24,7 @@ create TABLE IF NOT EXISTS payments(
     customer_id UUID NOT NULL REFERENCES customers(id) ON DELETE CASCADE ,--se o id da tabela customers for apagado, todos os pagamentos relacionados a esse cliente tb serao
     status VARCHAR(20) NOT NULL DEFAULT 'pending',
     total_value NUMERIC(15,2) NOT NULL,
-    creat_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 
 );
