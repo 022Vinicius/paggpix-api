@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany, ManyToMany } from 'typeorm';
 import { Payment } from './payment.entity';
 
 @Entity('customers')
@@ -21,6 +21,6 @@ export class Customer {
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @OneToMany(() => Payment, (payment) => payment.customer)
+  @ManyToMany(() => Payment, (payment) => payment.customer)
   payments: Payment[];
 }
