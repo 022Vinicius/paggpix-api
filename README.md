@@ -76,9 +76,6 @@ docker compose up -d --build
 npm install -g @nestjs/cli
 ```
 
-```bash
-npm run start:dev
-```
 
 #### 3.6. Acesse a API:
 
