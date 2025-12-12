@@ -21,6 +21,6 @@ export class Customer {
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @ManyToMany(() => Payment, (payment) => payment.customer)
+  @OneToMany(() => Payment, (payment) => payment.customer)
   payments: Payment[];
 }
