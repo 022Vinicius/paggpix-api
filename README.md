@@ -35,7 +35,7 @@ Para executar a API, você precisa ter instalado:
 #### 3.1. Clone o Repositório:
 
 ```bash
-git clone [https://github.com/022Vinicius/paggpix-api/edit/main/README.md]
+git clone [https://github.com/022Vinicius/paggpix-api]
 cd paggpix-api
 ```
 
