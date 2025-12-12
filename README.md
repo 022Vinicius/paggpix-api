@@ -32,6 +32,7 @@ Para executar a API, você precisa ter instalado:
 * **nodejs**
 
 ### 3.  Como Executar
+#### com o docker rodando em sua máquina
 
 #### 3.1. Clone o Repositório:
 
@@ -69,6 +70,11 @@ docker compose up -d --build
 ```
 
 #### 3.5. Inicie o NestJS:
+
+ Instalar o Nest CLI globalmente:
+```bash
+npm install -g @nestjs/cli
+```
 
 ```bash
 npm run start:dev
