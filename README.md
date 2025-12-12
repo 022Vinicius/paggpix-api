@@ -29,13 +29,14 @@ Para executar a API, você precisa ter instalado:
 
 * **Docker e Docker Compose**
 * **Git**
+* **nodejs**
 
 ### 3.  Como Executar
 
 #### 3.1. Clone o Repositório:
 
 ```bash
-git clone [https://github.com/022Vinicius/paggpix-api]
+git clone https://github.com/022Vinicius/paggpix-api
 cd paggpix-api
 ```
 
